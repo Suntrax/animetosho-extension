@@ -17,7 +17,7 @@ Tensei extensions are headless Android apps (no UI) that run in the background.
    - Search for `com.blissless.tensei_extension_template` and replace it with your new package name (e.g., `com.blissless.seadex`).
    - Search for `TEMPLATE_NAME` and replace it with your extension's display name (e.g., `SeaDex`).
 4. Move your Kotlin files into the new package folder structure (e.g., `com/blissless/seadex/`).
-5. Place your release keystore at `app/release.jks` and update the passwords in `app/build.gradle.kts`.
+5. Place your release keystore at `app/release` and update the passwords in `app/build.gradle.kts`.
 6. Open `TemplateScraper.kt` (rename it if you like) and implement your scraping logic!
 
 ## 📦 Data Contract
@@ -61,4 +61,5 @@ If your scraper fails, return an error object:
 Extensions are built to be as tiny as possible (~40KB). 
 - Do not add any external dependencies (no OkHttp, no Jsoup, no Gson). Use Android's built-in `HttpURLConnection`, `WebView`, and `org.json`.
 - R8 shrinking rules are stored in `app/src/main/keepRules/rules.keep`.
+- Delete folders /app/main/res/layout and /app/main/res/values and /app/main/res/values-night
 - Always build the **Release APK** (`./gradlew assembleRelease`) to ensure R8 shrinks the APK size.
