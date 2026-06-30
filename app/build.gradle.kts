@@ -2,6 +2,16 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
+import java.util.Properties
+import java.io.FileInputStream
+
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("local.properties")
+
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+}
+
 android {
     namespace = "com.blissless.animetosho"
     compileSdk = 37
@@ -16,10 +26,10 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = file("release")
-            storePassword = "lucaacul9"
-            keyAlias = "key0"
-            keyPassword = "lucaacul9"
+            storeFile = file(keystoreProperties["storeFile"] as String)
+            storePassword = keystoreProperties["storePassword"] as String
+            keyAlias = keystoreProperties["keyAlias"] as String
+            keyPassword = keystoreProperties["keyPassword"] as String
         }
     }
 
