@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.blissless.tensei_extension_template"
+    namespace = "com.blissless.animetosho"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.blissless.tensei_extension_template"
+        applicationId = "com.blissless.animetosho"
         minSdk = 26
         targetSdk = 37
         versionCode = 1
@@ -16,11 +16,10 @@ android {
 
     signingConfigs {
         create("release") {
-            // To use this template, place your keystore in app/release.jks
-            storeFile = file("release.jks")
-            storePassword = "YOUR_PASSWORD"
-            keyAlias = "YOUR_ALIAS"
-            keyPassword = "YOUR_PASSWORD"
+            storeFile = file("release")
+            storePassword = "lucaacul9"
+            keyAlias = "key0"
+            keyPassword = "lucaacul9"
         }
     }
 
