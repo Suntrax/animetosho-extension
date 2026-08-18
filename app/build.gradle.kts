@@ -1,9 +1,9 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     alias(libs.plugins.android.application)
 }
-
-import java.util.Properties
-import java.io.FileInputStream
 
 val keystoreProperties = Properties()
 val keystorePropertiesFile = rootProject.file("local.properties")
@@ -13,15 +13,15 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.blissless.animetosho"
+    namespace = "com.blissless.animetosho.anime.torrent"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.blissless.animetosho"
+        applicationId = "com.blissless.animetosho.anime.torrent"
         minSdk = 26
         targetSdk = 37
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.1"
     }
 
     signingConfigs {
