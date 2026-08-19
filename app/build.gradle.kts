@@ -13,7 +13,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.blissless.animetosho.anime.torrent"
+    namespace = "com.blissless.animetosho"
     compileSdk = 37
 
     defaultConfig {
